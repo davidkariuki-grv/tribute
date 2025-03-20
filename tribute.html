@@ -258,10 +258,56 @@ fetch("bioData.php")
       div.innerHTML= `
         <img src="${item[2]}" class="bioDataImage">
         <center><p class="bioDataName">${item[0]}</p></center>
+        <center><button class="viewButton" id="vewButtton">View More</button></center>
       `;
       i++;
     }
-   
+  viewButton.onclick = function(){
+    popupContainer.style.display="grid";
+    popup.style.display="grid";
+      popup.innerHTML = `
+    <button id="exitBtn"><i class="fa fa-close"></i></button>
+    <center><h2 class="infoTitle">${item[0]}</h2></center>
+    <center><h3 class="infoType">${item[1]}</h3></center>
+    <div class="container">
+    <div class="rightSubcontainer">
+      <img src="${item[2]}" class="infoImage">  
+    </div>
+    <div class="leftSubcontainer">
+      <table class="infoTable" border="0">
+        <tr>
+          <td>Born</td>
+          <td>${item[3]}</td>
+        </tr>
+        <tr>
+          <td>Education</td>
+          <td>${item[4]}</td>
+        </tr>
+        <tr>
+          <td>Spouse</td>
+          <td>${item[5]}</td>
+        </tr>
+        <tr>
+          <td>Children</td>
+          <td>${item[6]}</td>
+        </tr>
+        <tr>
+          <td>Organizations founded</td>
+          <td>${info['Organizations founded']}</td>
+        </tr>
+        <tr>
+          <td>Partner</td>
+          <td>${info['Partner']}</td>
+        </tr>
+        <tr>
+          <td>Net worth</td>
+          <td>${info['Net worth']}</td>
+        </tr>
+      </table>
+      </div class="container">
+    </div>
+    `
+  } 
   })
   
 })
