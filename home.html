@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="shortcut icon" href="tributeLogo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="loaderContainer" id="loaderContainer"></div>
+    <div class="loader" id="loader"></div>
+    <div class="header" id="header">
+        <div class="dropDown">
+            <button class="menuBtn" id="menuBtn"><i class="fa fa-bars"></i></button>
+            <div class="menu">
+                <a href="home.html" class="tags"><i class="fa fa-home"></i>Home</a>
+                <a href="tribute.html" class="tags"><i class="fa fa-folder"></i>Tributes</a>
+            </div>
+        </div>
+        <div class="logoSection">
+            <h3 class="logoHeader" id="logoHeader">Tributaries</h3>
+        </div>
+    </div>
+    <div class="wallpaperContainer">
+        <div class="dynamicWallpaper" id="dynamicWallpaper">
+            <img src="https://images.pexels.com/photos/7869045/pexels-photo-7869045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="wallpaper1" class="wallpaperImage">
+            <img src="https://img.freepik.com/free-photo/portrait-professor-work-educational-system_23-2151737252.jpg?ga=GA1.1.1953010809.1742036957&semt=ais_hybrid" id="wallpaper2" class="wallpaperImage">
+            <img src="https://images.pexels.com/photos/9242824/pexels-photo-9242824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="wallpaper3" class="wallpaperImage">
+            <img src="https://img.freepik.com/free-photo/technology-concept-with-futuristic-element_23-2151910927.jpg?ga=GA1.1.1953010809.1742036957&semt=ais_hybrid" id="wallpaper4" class="wallpaperImage">
+            <img src="https://img.freepik.com/free-photo/women-repair-shop-fixing-vehicle_482257-90906.jpg?t=st=1742037772~exp=1742041372~hmac=d61ff209cbf6bbaf59c4c86e973e9b55a737efa4fb92d8d86a22cbe3a39dd47d&w=996" id="wallpaper5" class="wallpaperImage">
+        </div>
+        <!-- <div class="wallpaperHover"></div> -->
+        <div class="about">
+            <p class="aboutContent">
+                <h1 class="aboutHeader"><U>ABOUT THIS TRIBUTE WEBSITE</U></h1>
+            </p>
+        </div>
+    </div>     
+        <div class="container">
+            <h2>
+                Tributaries
+                <br>
+                Celebrating Icons
+            </h2>
+            <div class="rightSubcontainer">
+                <h3 class="containerHeader">About This Website</h3>
+                <p>
+                    This website is deployed to recognize and acknowledge the great icons in the field of Technology
+                    by honoring, celebrating and expressing great respects of admiration and appreciation through 
+                    tributizing their: <br>
+                </p>
+                <ul type="none">
+                    <li>Biographies?timeline: This is where by a comprehensive overview of the icons' lives will be provided.</li> <br>
+                    <li>Quotes and Testimonials: This website will be sharing the icons' quotes, testimonials and personal stories.</li> <br>
+                    <li>Images: Clear Photos will also be provided.</li> <br>
+                </ul>
+            </div>
+            <div class="leftSubcontainer">
+                <img src="https://images.pexels.com/photos/9242824/pexels-photo-9242824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="subcontainerImage">
+            </div>
+            <h4>
+                Data validity has been a key aspect in this website. All data presented in the tribute page
+                has been powered by the Google search API. By doing so, it is guaranteed that all the data is precise 
+                and accurate. 
+            </h4>
+            <h4>
+                The data presented in the tribute page is also very reliable as it is update and includes sources or citations where appropriate.
+            </h4>
+            <h4>
+                This website is specifically designed to offer the user with structured information
+                about the icons in the tech field and hence it provides an easy platform to get their knowledge 
+                graph without alot of husstle.
+            </h4>
+            <footer class="footer">
+                <p>Powered By Google</p>
+            </footer>
+        </div>
+<script>
+    loaderContainer.style.display = "block";
+  loader.style.display = "block";
+  window.addEventListener('load', (event) => {
+    loaderContainer.style.display = "none";
+    loader.style.display = "none";
+  });
+    var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("wallpaperImage");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 6000); // Change image every 6 seconds
+}
+
+window.addEventListener('scroll', function(){
+    let scrollPosition = window.scrollY;
+    let header = document.getElementById("header");
+    let logoHeader = document.getElementById("logoHeader");
+    let menuBtn = document.getElementById("menuBtn");
+    if(scrollPosition > 500){
+        header.style.backgroundColor = 'whitesmoke';
+        logoHeader.style.color = 'black';
+        menuBtn.style.color = 'black';
+    }
+    else{
+        header.style.backgroundColor = '#051726';
+        logoHeader.style.color = 'white';
+        menuBtn.style.color = 'white';
+    }
+})
+</script>    
+</body>
+</html>
