@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = new mysqli('db.lhcbsoesruuegousfivo.supabase.co:5432', 'postgres', 'kinyanjui001david', 'postgres');
+$con = new mysqli('localhost', 'root', 'kinyanjui001david', 'tribute');
 $sql = 'select * from bio_data';
 $result = mysqli_query($con, $sql);
 if($result){

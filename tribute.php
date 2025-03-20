@@ -41,7 +41,7 @@ if(isset($data['networth'])){
 else{
     $networth = "undefined";
 }
-$con = new mysqli('db.lhcbsoesruuegousfivo.supabase.co:5432', 'postgres', 'kinyanjui001david', 'postgres');
+$con = new mysqli('localhost', 'root', 'kinyanjui001david', 'tribute');
 $searchSql = "select * from bio_data where name = '$name' and born = '$born';";
 $result = mysqli_query($con, $searchSql);
 $bioData = mysqli_num_rows($result);
