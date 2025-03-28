@@ -1,6 +1,5 @@
 <?php
-session_start();
-$con = new mysqli('localhost', 'root', 'kinyanjui001david', 'tribute');
+include('config.php');
 $sql = 'select * from bio_data';
 $result = mysqli_query($con, $sql);
 if($result){

@@ -1,10 +1,11 @@
 <?php
-// $session_start();
-$data = json_decode('file_get_contents("php://input")', true);
+include("config.php");
+$data = json_decode(file_get_contents('php://input'), true);
 $name = $data['name'];
 $type = $data['type'];
 $image = $data['image'];
 $born = $data['born']; 
+echo json_encode($born.$name.$type);
 if(isset($data['education'])){
     $education = $data['education'];
 }
@@ -41,12 +42,12 @@ if(isset($data['networth'])){
 else{
     $networth = "undefined";
 }
-$con = new mysqli('localhost', 'root', 'kinyanjui001david', 'tribute');
+// $con = new mysqli('localhost', 'root', 'kinyanjui001david', 'tribute');
 $searchSql = "select * from bio_data where name = '$name' and born = '$born';";
 $result = mysqli_query($con, $searchSql);
 $bioData = mysqli_num_rows($result);
 if($bioData === 1){
-    echo json_encode("Data is already input");
+    echo json_encode($bioData);
 }
 else{
     $sql = $con->prepare("insert into bio_data values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
